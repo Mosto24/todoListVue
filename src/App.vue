@@ -15,7 +15,6 @@
             label="Название задачи"
           ></v-text-field>
         </v-col>
-
         <v-col
           cols="12"
           md="6"
@@ -71,14 +70,16 @@
     },
     methods: {
       addTask() {
-        this.taskList.push({
-          id: Date.now(), title: this.firstname, body: this.lastname
-        });
-        this.firstname = '';
-        this.lastname = '';
-        this.formActive = false;
-        localStorage.removeItem("list");
-        localStorage.setItem('list', JSON.stringify(this.taskList));
+        if (this.firstname != '' && this.lastname != '') {
+          this.taskList.push({
+            id: Date.now(), title: this.firstname, body: this.lastname
+          });
+          this.firstname = '';
+          this.lastname = '';
+          this.formActive = false;
+          localStorage.removeItem("list");
+          localStorage.setItem('list', JSON.stringify(this.taskList));
+        }
       },
       deleteTask(id) {
         this.taskList = this.taskList.filter((item) => item.id != id);
