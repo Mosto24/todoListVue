@@ -1,1 +1,1 @@
-https://delightful-arithmetic-18080d.netlify.app/
+vue-todolist-app-project.netlify.app
