@@ -1,1 +1,1 @@
-vue-todolist-app-project.netlify.app
+https://vue-todolist-app-project.netlify.app/
